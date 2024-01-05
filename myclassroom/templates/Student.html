@@ -1,0 +1,45 @@
+<!-- templates/my_template.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Table</title>
+</head>
+
+<body>
+
+    <h2>Student Table</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Class Name</th>
+                <th>Email</th>
+                <th>Contact Number</th>
+                <th>Created</th>
+                <th>Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.roll_no }}</td>
+                <td>{{ student.first_name }}</td>
+                <td>{{ student.last_name }}</td>
+                <td>{{ student.className.name }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.contact_number }}</td>
+                <td>{{ student.created }}</td>
+                <td>{{ student.updated }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>
